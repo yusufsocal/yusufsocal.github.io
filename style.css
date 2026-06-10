@@ -4,25 +4,17 @@ body {
     background-color: #0f0f0f;
 }
 
-h1 {
-    color: white;
-}
+h1 {color: white; }
+h2 {color: white; }
+h3 {color: white; }
 
-h3 {
-    color: white;
-    margin-top: 10px;
-}
+p { font-size: 16px; color: #ccc; }
 
-p {
-    font-size: 16px;
-    color: #ccc;   
-}
+hr { max-width: 980px; }
 
-hr {
-    max-width: 980px; 
-}
+a { text-decoration: none; color: inherit; }
 
-a {
+a.contact {
     text-decoration: none;
     color: gray;
     margin-right: 10px;
@@ -42,6 +34,15 @@ a {
 .badge-teal { background-color: #0e2220; color: #2A9D8F; border: 1px solid #2A9D8F; }
 .badge-red { background-color: #2e0e0e; color: #E63946; border: 1px solid #E63946; }
 .badge-gray { background-color: #1a1a1a; color: #9CA3AF; border: 1px solid #6B7280; }
+
+.flex-container-card {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: flex-start; 
+}
 
 .flex-container {
     display: flex;
@@ -74,6 +75,8 @@ a {
     font-family: sans-serif;
     background-color: #1a1a1a;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex: 1;
+    align-self: stretch;
 }
 
 .card:hover {
@@ -83,12 +86,15 @@ a {
 
 .card-img {
     width: 100%;
-    height: auto;
+    height: 200px;
     object-fit: cover;
 }
 
 .card-body {
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .card-title {
@@ -102,20 +108,5 @@ a {
     font-size: 0.8rem;
     color: #9CA3AF;
     line-height: 1.4;
-}
-
-.card-btn {
-    display: inline-block;
-    text-decoration: none;
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: background-color 0.2s;
-}
-
-.card-btn:hover {
-    background-color: #0056b3;
+    flex: 1;
 }

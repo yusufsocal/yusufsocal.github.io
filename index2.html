@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusuf Selim Öcal — Informatics @ UiO</title>
+    <meta name="description" content="Portfolio of Yusuf Selim Öcal, third-year informatics student at the University of Oslo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="container nav">
+            <a href="#top" class="wordmark">yusuf-trky<span class="cursor">_</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="top">
+
+        <section id="hero" class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <p class="eyebrow">Informatics · University of Oslo</p>
+                    <h1>Yusuf Selim&nbsp;Öcal</h1>
+                    <p class="lede">Third-year informatics student building things that work, <em>barely</em> 😉 — Android apps, networks, and whatever course projects throw at me.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#projects">View projects</a>
+                        <a class="btn btn-ghost" href="https://github.com/yusuf-trky">GitHub ↗</a>
+                    </div>
+                    <p class="hero-meta">📍 Oslo, Norway</p>
+                </div>
+                <div class="hero-portrait">
+                    <!-- Swap this placeholder for a photo of yourself (square, ~400x400 works best) -->
+                    <img src="https://placehold.co/400x400/131A28/93A0B4?text=Your+photo" alt="Portrait of Yusuf Selim Öcal" width="400" height="400">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container section">
+            <h2><span class="tick"></span>About me</h2>
+            <div class="about-text">
+                <p>
+                    I'm a third-year informatics student at the University of Oslo. What I enjoy most is taking
+                    something technical from a lecture and finding out where it actually lives in the real world —
+                    like learning routing algorithms, then realising they're the reason the internet works at all.
+                </p>
+                <p>
+                    The highlight so far: building <a class="inline-link" href="https://github.com/yusuf-trky/sydvest">Sydvest</a>,
+                    an Android weather app, with a team of five. We worked in weekly sprints with pull requests and
+                    code review — as close to a real engineering team as a course gets. Between that, coursework,
+                    and personal projects, I've gotten comfortable in Java, Kotlin, Python and C.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="container section">
+            <h2><span class="tick"></span>Skills</h2>
+            <div class="skill-rows">
+                <div class="skill-row">
+                    <h3 class="skill-label">Languages</h3>
+                    <ul class="tags">
+                        <li>Java</li>
+                        <li>Kotlin</li>
+                        <li>Python</li>
+                        <li>C</li>
+                    </ul>
+                </div>
+                <div class="skill-row">
+                    <h3 class="skill-label">Frameworks &amp; libraries</h3>
+                    <ul class="tags">
+                        <li>Jetpack Compose</li>
+                        <li>Ktor</li>
+                        <li>osmdroid</li>
+                        <li>JUnit</li>
+                    </ul>
+                </div>
+                <div class="skill-row">
+                    <h3 class="skill-label">Concepts</h3>
+                    <ul class="tags">
+                        <li>MVVM</li>
+                        <li>Agile development</li>
+                        <li>Unit testing</li>
+                        <li>Object-oriented programming</li>
+                        <li>Git workflow</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="container section">
+            <h2><span class="tick"></span>Projects</h2>
+            <div class="project-grid">
+
+                <a class="project-card" href="https://github.com/yusuf-trky/sydvest">
+                    <div class="project-media">
+                        <img src="images/sydvest_logo-playstore.png" alt="Sydvest app logo — a turtle wearing a sun hat and sunglasses">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>Sydvest</h3>
+                            <span class="project-kind">Android app</span>
+                        </div>
+                        <p>
+                            Weather app showing live MET forecasts and danger warnings on an interactive map.
+                            Built over a semester by a team of five, with weekly sprints, PRs and code review.
+                        </p>
+                        <ul class="tags tags-small">
+                            <li>Kotlin</li>
+                            <li>Jetpack Compose</li>
+                            <li>Ktor</li>
+                            <li>MVVM</li>
+                        </ul>
+                        <span class="project-link">View on GitHub →</span>
+                    </div>
+                </a>
+
+                <a class="project-card" href="https://github.com/yusuf-trky/yusuf-trky.github.io">
+                    <div class="project-media">
+                        <img src="images/portfolio-screenshot.png" alt="Screenshot of this portfolio website">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>This website</h3>
+                            <span class="project-kind">Website</span>
+                        </div>
+                        <p>
+                            The page you're reading right now — hand-written HTML and CSS, no frameworks,
+                            hosted on GitHub Pages.
+                        </p>
+                        <ul class="tags tags-small">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>GitHub Pages</li>
+                        </ul>
+                        <span class="project-link">View on GitHub →</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <h2 class="footer-title">Get in touch</h2>
+                <p class="footer-text">Open to internships and student positions in software engineering.</p>
+            </div>
+            <div class="footer-links">
+                <a class="btn btn-primary" href="mailto:yusufocal005@gmail.com">Email me</a>
+                <a class="btn btn-ghost" href="https://github.com/yusuf-trky">GitHub ↗</a>
+            </div>
+        </div>
+        <p class="footer-note container">© 2026 Yusuf Selim Öcal · Built mostly by Claude </p>
+    </footer>
+
+</body>
+</html>
