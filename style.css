@@ -1,12 +1,48 @@
+/* ============================================================
+   style.css — yusuf-trky.github.io
+
+   Order: variables → base → layout → components → media queries
+   Rule of thumb: generic stuff up top, specific stuff below.
+   ============================================================ */
+
+
+/* ============================================================
+   1. VARIABLES
+   Design tokens. You don't use these yet — but when you do,
+   changing one line here re-themes the whole site.
+   Usage: background-color: var(--bg);
+   ============================================================ */
+
+:root {
+    --bg: #0f0f0f;
+    --text: #ccc;
+    --heading: white;
+    --muted: gray;
+}
+
+
+/* ============================================================
+   2. BASE
+   Defaults for bare HTML elements. No classes here.
+   ============================================================ */
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
     background-color: #0f0f0f;
 }
 
-h1 {color: white; }
-h2 {color: white; }
-h3 {color: white; }
+/* NOTE: font-family + margin here are redundant — font-family
+   is inherited from body, and this margin stacks ON TOP of
+   body's 20px. You probably only need the color. */
+header {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #0f0f0f;
+    color: gray;
+}
+
+h1, h2, h3 { color: white; }
 
 p { font-size: 16px; color: #ccc; }
 
@@ -14,49 +50,24 @@ hr { max-width: 980px; }
 
 a { text-decoration: none; color: inherit; }
 
-a.contact {
-    text-decoration: none;
-    color: gray;
-    margin-right: 10px;
-}
+/* NOTE: this hits EVERY link on the page, including cards.
+   If that's intentional, fine — just know it's global. */
+a:hover { color: white; }
 
-.badge {
-    padding: 0.25em 0.4em;
-    background-color: #333;
-    color: #fff;
-    border-radius: 0.5rem;
-    font-size: 14px;
-}
-.badge-blue { background-color: #1e2a3a; color: #4A90D9; border: 1px solid #4A90D9; }
-.badge-green { background-color: #1a2e1a; color: #4CAF50; border: 1px solid #4CAF50; }
-.badge-orange { background-color: #2e1e0e; color: #E07B39; border: 1px solid #E07B39; }
-.badge-purple { background-color: #1e1a2e; color: #7B68EE; border: 1px solid #7B68EE; }
-.badge-teal { background-color: #0e2220; color: #2A9D8F; border: 1px solid #2A9D8F; }
-.badge-red { background-color: #2e0e0e; color: #E63946; border: 1px solid #E63946; }
-.badge-gray { background-color: #1a1a1a; color: #9CA3AF; border: 1px solid #6B7280; }
 
-.flex-container-card {
-    display: flex;
-    gap: 20px;
+/* ============================================================
+   3. LAYOUT
+   Page scaffolding: containers and flex wrappers.
+   These position things but don't style them.
+   ============================================================ */
+
+.navbar {
+    width: 100%;
+    height: 60px;
     max-width: 1000px;
     margin: 0 auto;
-    width: 100%;
-    align-items: flex-start; 
-}
-
-.flex-container {
     display: flex;
-    gap: 20px;     
-    justify-content: space-between;
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
-    align-items: flex-start; 
-}
-
-.flex-container-column {
-    display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -66,13 +77,102 @@ a.contact {
     padding: 20px;
 }
 
+.flex-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-container-card {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-top: 1px solid #232D40;
+}
+
+
+/* ============================================================
+   4. COMPONENTS
+   One block per visual thing. Keep a component's hover/states
+   right next to it, not scattered elsewhere.
+   ============================================================ */
+
+/* ---- navbar ---- */
+
+.logo {
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: white;
+    text-decoration: none;
+}
+
+.logo .cursor {
+    color: #F5C84B;
+    animation: blink 1.2s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.navbar .links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+/* ---- contact links ---- */
+
+a.contact {
+    text-decoration: none;
+    color: gray;
+    margin-right: 10px;
+}
+
+/* ---- badges ---- */
+
+.badge {
+    padding: 0.25em 0.4em;
+    background-color: #333;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 14px;
+}
+
+.badge-blue   { background-color: #1e2a3a; color: #4A90D9; border: 1px solid #4A90D9; }
+.badge-green  { background-color: #1a2e1a; color: #4CAF50; border: 1px solid #4CAF50; }
+.badge-orange { background-color: #2e1e0e; color: #E07B39; border: 1px solid #E07B39; }
+.badge-purple { background-color: #1e1a2e; color: #7B68EE; border: 1px solid #7B68EE; }
+.badge-teal   { background-color: #0e2220; color: #2A9D8F; border: 1px solid #2A9D8F; }
+.badge-red    { background-color: #2e0e0e; color: #E63946; border: 1px solid #E63946; }
+.badge-gray   { background-color: #1a1a1a; color: #9CA3AF; border: 1px solid #6B7280; }
+
+/* ---- project cards ---- */
 
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     max-width: 200px;
     border-radius: 8px;
     overflow: hidden;
-    font-family: sans-serif;
+    font-family: sans-serif; /* NOTE: redundant — inherited from body */
     background-color: #1a1a1a;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     flex: 1;
@@ -110,3 +210,10 @@ a.contact {
     line-height: 1.4;
     flex: 1;
 }
+
+
+/* ============================================================
+   5. MEDIA QUERIES
+   Responsive overrides go here, at the bottom, so they win
+   over everything above. (You don't have any yet — soon!)
+   ============================================================ */
