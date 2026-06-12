@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yusuf Selim Öcal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=JetBrains+Mono:wght@400&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
@@ -15,7 +18,7 @@
     
     <header>
         <div class="navbar container">
-            <div class="logo"><a href="#">yusuf-trky</a><span class="cursor">_</span></div>
+            <div class="logo"><a href="#">yusufsocal</a><span class="cursor">_</span></div>
             <ul class="links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -27,14 +30,15 @@
     </header>
 
     <section id="hero">
-        <div class="container section">
+        <div class="container">
             <div class="flex-container">
                 <div class="flex-container-column">
-                    <h1>Yusuf Selim Öcal</h1>
-                    <p>Third-year informatics student at the University of Oslo, building things that work, barely 😉.
+                    <h1 class="name">Yusuf Selim Öcal</h1>
+                    <p class="lede">Third-year informatics student at the University of Oslo, building things that work, just <em>barely</em> 😉.
                     </p>
+                    <p class="currently">Currently building this site & excited for USA trip</p>
                 </div>
-                <img src="https://placehold.co/150x150" alt="Logo" width="150" height="150">
+                <img src="https://placehold.co/200x200" alt="Logo" width="200" height="200">
             </div>
         </div>
     </section>
@@ -50,7 +54,7 @@
             </p>
             <p>
                 The highlight so far: building <a class="inline-link"
-                    href="https://github.com/yusuf-trky/sydvest">Sydvest</a>,
+                    href="https://github.com/yusufsocal/sydvest">Sydvest</a>,
                 an Android weather app, with a team of five. We worked in weekly sprints with pull requests and
                 code review — as close to a real engineering team as a course gets. Between that, coursework,
                 and personal projects, I've gotten comfortable in Java, Kotlin, Python and C.
@@ -60,26 +64,33 @@
     </section>
 
 
-    <section id="skills">
-        <div class="container section">
-            <h2>Languages </h2>
+    <section id="skills" class="container section">
+        <h2>Skills</h2>
+        <div class="skill-group">
+            <h3>Programming Languages </h3>
             <span class="badge badge-blue">Java</span>
             <span class="badge badge-green">Kotlin</span>
             <span class="badge badge-purple">Python</span>
             <span class="badge badge-orange">C</span>
         </div>
-        <div class="container">
-            <h2>Frameworks/libraries </h2>
+        <div class="skill-group">
+            <h3>Frameworks/libraries </h3>
             <span class="badge badge-green">Jetpack Compose</span>
             <span class="badge badge-blue">Ktor</span>
             <span class="badge badge-purple">Osmdroid</span>
         </div>
-        <div class="container">
-            <h2>Concepts</h2>
+        <div class="skill-group">
+            <h3>Concepts </h3>
             <span class="badge badge-orange">Model-View-ViewModel (MVVM)</span>
             <span class="badge badge-purple">Agile software development</span>
             <span class="badge badge-green">Unit testing</span>
             <span class="badge badge-blue">Object-oriented programming</span>
+        </div>
+        <div class="skill-group">
+            <h3>Spoken Languages </h3>
+                <span class="badge badge-purple">Turkish (mother tongue)</span>
+                <span class="badge badge-orange">Norwegian (fluent)</span>
+                <span class="badge badge-green">English (fluent)</span>
         </div>
 
     </section>
@@ -89,8 +100,8 @@
             <h2>Projects</h2>
             <div class="flex-container-card">
                 <div class="card">
-                    <a href="https://github.com/yusuf-trky/sydvest">
-                        <img src="images\sydvest_logo-playstore.png" alt="Card Preview Image" class="card-img">
+                    <a href="https://github.com/yusufsocal/sydvest">
+                        <img src="images/sydvest_logo-playstore.png" alt="SydVest app logo, a tiny turtle head wearing a sun hat and sun glasses" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">SydVest</h3>
                             <p class="card-text">SydVest is an Android application that shows weather data, developed by
@@ -99,8 +110,8 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="https://github.com/yusuf-trky/username.github.io.git">
-                        <img src="images\portfolio-screenshot.png" alt="Card Preview Image" class="card-img">
+                    <a href="https://github.com/yusufsocal/yusufsocal.github.io.git">
+                        <img src="images/portfolio-screenshot.png" alt="An image of this very website!" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">This Website</h3>
                             <p class="card-text">The very website you are currently viewing!</p>
@@ -113,9 +124,9 @@
 
     <section id="contact">
         <div class="container section">
-            <h3>Contact</h3>
+            <h2>Contact</h2>
             <p><a class="contact" href="mailto:yusufocal005@gmail.com">Email</a> <a class="contact"
-                    href="https://github.com/yusuf-trky">GitHub</a></p>
+                    href="https://github.com/yusufsocal">GitHub</a></p>
         </div>
     </section>
 </body>
