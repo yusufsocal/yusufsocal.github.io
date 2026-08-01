@@ -117,6 +117,7 @@ h2::before {
 
 .flex-container-card {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
@@ -188,50 +189,81 @@ h2::before {
     gap: 2rem;
 }
 
-/* ---- contact links ---- */
+/* ---- hobbies ---- */
 
-a.contact {
-    text-decoration: none;
-    color: var(--muted);
-    margin-right: 10px;
+.hobbies-list { margin-top: 20px; }
+
+.hobbies-list i {
+    color: var(--accent);
+    margin-right: 6px;
 }
-
-a.contact:hover { color: var(--accent);}
 
 /* ---- skills ---- */
 
-.skill-group { margin-bottom: 26px; }
-.skill-group h3 { margin-bottom: 10px; color: var(--muted); }
-
-/* ---- badges ---- */
-
-.badge {
-    padding: 0.25em 0.4em;
-    background-color: var(--surface);
-    color: var(--text);
-    border-radius: 0.5rem;
-    font-size: 14px;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
 }
 
-/* Colored variants intentionally stay hardcoded — they ARE
-   their colors. Delete this block if/when you go single-accent. */
-.badge-blue   { background-color: #1e2a3a; color: #4A90D9; border: 1px solid #4A90D9; }
-.badge-green  { background-color: #1a2e1a; color: #4CAF50; border: 1px solid #4CAF50; }
-.badge-orange { background-color: #2e1e0e; color: #E07B39; border: 1px solid #E07B39; }
-.badge-purple { background-color: #1e1a2e; color: #7B68EE; border: 1px solid #7B68EE; }
-.badge-teal   { background-color: #0e2220; color: #2A9D8F; border: 1px solid #2A9D8F; }
-.badge-red    { background-color: #2e0e0e; color: #E63946; border: 1px solid #E63946; }
-.badge-gray   { background-color: #1a1a1a; color: #9CA3AF; border: 1px solid #6B7280; }
+.skill-group {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;          /* matches the hero portrait & cards */
+    padding: 20px;
+    transition: border-color 0.2s ease;
+}
+
+.skill-group:hover { border-color: var(--accent); }
+
+/* group labels read like code comments — same voice as the
+   logo and the "currently" pill */
+.skill-group h3 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    color: var(--muted);
+    margin: 0 0 14px 0;
+}
+
+.skill-group h3::before {
+    content: "// ";
+    color: var(--accent);
+}
+
+.skill-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-list li {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text);
+    padding: 6px 12px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 999px;         /* same pill shape as .currently */
+}
+
+.skill-note { color: var(--muted); }
 
 /* ---- project cards ---- */
 
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    max-width: 200px;
-    border-radius: 8px;
+    max-width: 240px;
+    border-radius: 12px;          /* matches .skill-group & hero portrait */
+    border: 1px solid var(--line);
     overflow: hidden;
     background-color: var(--surface);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     flex: 1;
     align-self: stretch;
 }
@@ -239,6 +271,7 @@ a.contact:hover { color: var(--accent);}
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    border-color: var(--accent);
 }
 
 .card-img {
@@ -269,7 +302,86 @@ a.contact:hover { color: var(--accent);}
 }
 
 
+/* ---- footer ---- */
+
+/* Mirrors the header: same surface, same hairline, so the page
+   is "framed" top and bottom. */
+footer {
+    margin-top: 48px;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 32px;
+}
+
+.footer-about { max-width: 420px; }
+
+.footer-desc {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.footer-contact h3 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    color: var(--muted);
+    margin: 0 0 12px 0;
+}
+
+.footer-contact h3::before {
+    content: "// ";
+    color: var(--accent);
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links a {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover { color: var(--accent); }
+
+.footer-links i {
+    color: var(--accent);
+    width: 20px;
+    text-align: center;
+    margin-right: 4px;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--line);
+}
+
+.footer-bottom p {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+
 /* ============================================================
    5. MEDIA QUERIES
    Responsive overrides go here, at the bottom.
    ============================================================ */
+
+@media (max-width: 640px) {
+    .skills-grid { grid-template-columns: 1fr; }
+}

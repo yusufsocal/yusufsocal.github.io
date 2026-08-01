@@ -24,6 +24,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -36,7 +37,7 @@
                     <h1 class="name">Yusuf Selim Öcal</h1>
                     <p class="lede">Third-year informatics student at the University of Oslo, building things that work, just <em>barely</em> 😉.
                     </p>
-                    <p class="currently">Currently building this site & excited for USA trip</p>
+                    <p class="currently">Starting last year in uni !!!</p>
                 </div>
                 <img src="https://placehold.co/200x200" alt="Logo" width="200" height="200">
             </div>
@@ -64,35 +65,46 @@
     </section>
 
 
-    <section id="skills" class="container section">
-        <h2>Skills</h2>
-        <div class="skill-group">
-            <h3>Programming Languages </h3>
-            <span class="badge badge-blue">Java</span>
-            <span class="badge badge-green">Kotlin</span>
-            <span class="badge badge-purple">Python</span>
-            <span class="badge badge-orange">C</span>
+    <section id="skills">
+        <div class="container section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>Java</li>
+                        <li>Kotlin</li>
+                        <li>Python</li>
+                        <li>C</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Frameworks/libraries</h3>
+                    <ul class="skill-list">
+                        <li>Jetpack Compose</li>
+                        <li>Ktor</li>
+                        <li>Osmdroid</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Concepts</h3>
+                    <ul class="skill-list">
+                        <li>Model-View-ViewModel (MVVM)</li>
+                        <li>Agile software development</li>
+                        <li>Unit testing</li>
+                        <li>Object-oriented programming</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Spoken Languages</h3>
+                    <ul class="skill-list">
+                        <li>Turkish <span class="skill-note">(mother tongue)</span></li>
+                        <li>Norwegian <span class="skill-note">(fluent)</span></li>
+                        <li>English <span class="skill-note">(fluent)</span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="skill-group">
-            <h3>Frameworks/libraries </h3>
-            <span class="badge badge-green">Jetpack Compose</span>
-            <span class="badge badge-blue">Ktor</span>
-            <span class="badge badge-purple">Osmdroid</span>
-        </div>
-        <div class="skill-group">
-            <h3>Concepts </h3>
-            <span class="badge badge-orange">Model-View-ViewModel (MVVM)</span>
-            <span class="badge badge-purple">Agile software development</span>
-            <span class="badge badge-green">Unit testing</span>
-            <span class="badge badge-blue">Object-oriented programming</span>
-        </div>
-        <div class="skill-group">
-            <h3>Spoken Languages </h3>
-                <span class="badge badge-purple">Turkish (mother tongue)</span>
-                <span class="badge badge-orange">Norwegian (fluent)</span>
-                <span class="badge badge-green">English (fluent)</span>
-        </div>
-
     </section>
 
     <section id="projects">
@@ -122,23 +134,40 @@
         </div>
     </section>
 
-    <section id="interests" class="container section">
-        <h2>Beyond Code</h2>
-        <p class="interests">
-            <span>🎻 Violin</span>
-            <span>🎯 Valorant</span>
-            <span>📖 Reading everything from fantasy books to religious texts</span>
-        </p>
-    </section>
-
-    <section id="contact">
+    <section id="hobbies">
         <div class="container section">
-            <h2>Contact</h2>
-            <p><a class="contact" href="mailto:yusufocal005@gmail.com">Email</a> <a class="contact"
-                    href="https://github.com/yusufsocal">GitHub</a></p>
+            <h2>Hobbies</h2>
+            <ul class="skill-list hobbies-list">
+                <li><i class="fa-solid fa-book"></i> Reading</li>
+                <li><i class="fa-solid fa-gamepad"></i> Valorant</li>
+                <li><i class="fa-solid fa-music"></i> Violin</li>
+            </ul>
         </div>
     </section>
 
+    <footer id="contact">
+        <div class="container footer-inner">
+            <div class="footer-about">
+                <div class="logo"><a href="#hero">yusufsocal</a><span class="cursor">_</span></div>
+                <p class="footer-desc">Informatics student at the University of Oslo, building Android apps and
+                    the occasional website. Open to internships and student positions.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:yusufocal005@gmail.com"><i class="fa-solid fa-envelope"></i>
+                            yusufocal005@gmail.com</a></li>
+                    <li><a href="https://github.com/yusufsocal"><i class="fa-brands fa-github"></i>
+                            github.com/yusufsocal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Yusuf Selim Öcal · Oslo, Norway · Built with plain HTML &amp; CSS</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
