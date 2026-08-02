@@ -44,7 +44,7 @@ body {
 header {
     position: sticky;
     top: 0;
-    background: var(--surface);
+    background: color-mix(in srgb, var(--surface) 80%, transparent);
     backdrop-filter: blur(8px);
     color: var(--muted);
     border-bottom: 1px solid var(--line);   
@@ -53,8 +53,6 @@ header {
 h1, h2, h3 { color: var(--text); font-family: var(--font-heading) ;}
 
 p { font-size: 16px; color: var(--muted);}
-
-hr { max-width: 980px; }
 
 a { text-decoration: none; color: inherit; }
 
@@ -134,6 +132,15 @@ h2::before {
    4. COMPONENTS
    ============================================================ */
 
+.inline-link {
+    color: var(--accent);
+}
+
+.inline-link:hover { 
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 /* ---- header ---- */
 
 .currently {
@@ -155,7 +162,7 @@ h2::before {
     border-radius: 50%;
     background: var(--accent);
     margin-right: 8px;
-    animation: blink 1.2s steps(1) infinite;   /* reuses your cursor animation! */
+    animation: blink 1.2s steps(1) infinite;
 }
 
 .lede {
@@ -210,15 +217,13 @@ h2::before {
 .skill-group {
     background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: 12px;          /* matches the hero portrait & cards */
+    border-radius: 12px;
     padding: 20px;
     transition: border-color 0.2s ease;
 }
 
 .skill-group:hover { border-color: var(--accent); }
 
-/* group labels read like code comments — same voice as the
-   logo and the "currently" pill */
 .skill-group h3 {
     font-family: var(--font-mono);
     font-size: 0.8rem;
@@ -249,7 +254,7 @@ h2::before {
     padding: 6px 12px;
     background: var(--bg);
     border: 1px solid var(--line);
-    border-radius: 999px;         /* same pill shape as .currently */
+    border-radius: 999px;
 }
 
 .skill-note { color: var(--muted); }
@@ -383,5 +388,27 @@ footer {
    ============================================================ */
 
 @media (max-width: 640px) {
-    .skills-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }   /* you already have this */
+
+    /* navbar: stop forcing one 60px row, let it wrap and breathe */
+    .navbar {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .navbar .links {
+        gap: 1rem;               /* was 2rem — tighter so more fits per row */
+        flex-wrap: wrap;
+    }
+
+    /* hero: stack text above image instead of side-by-side */
+    .flex-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* name: 3.5rem is a wall of text on a phone */
+    .name { font-size: 2.2rem; }
 }
