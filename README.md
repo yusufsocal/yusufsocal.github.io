@@ -4,9 +4,8 @@ My personal portfolio site built from scratch in plain HTML and CSS, with no fra
 
 **Live:** https://yusufsocal.github.io
 
-<!-- Add a screenshot here once you have one:
-![Screenshot of the site](images/screenshot.png)
--->
+![Screenshot of the site](images/portfolio-screenshot.png)
+
 
 ## About
 
@@ -41,8 +40,3 @@ Ongoing. Things I plan to add:
 - A dedicated project page for each project rather than a single list
 - Light/dark theme toggle
 - And maybe more :)
-
-## Contact
-
-- Portfolio: https://yusufsocal.github.io
-- GitHub: https://github.com/yusufsocal
