@@ -1,0 +1,169 @@
+/* ============================================================
+   violin.css — the "play my violin" stage
+   Uses the design tokens from style.css.
+   ============================================================ */
+
+.v-play {
+    margin-left: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--bg);
+    background: var(--accent);
+    border: none;
+    border-radius: 999px;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.v-play:hover { filter: brightness(1.15); }
+
+.stage {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 24px 22px;
+    background:
+        radial-gradient(ellipse at 60% 45%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%),
+        var(--bg);
+    color: var(--text);
+    overflow-y: auto;
+    touch-action: none;
+}
+
+.stage[hidden] { display: none; }
+
+.stage-top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+.stage-top h2 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.4rem); }
+
+.stage-btns { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+
+.v-btn {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.v-btn:hover { border-color: var(--accent); }
+.v-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+
+.stage-close {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.stage-close:hover { border-color: var(--accent); color: var(--accent); }
+
+.now-playing { display: flex; align-items: baseline; gap: 16px; }
+
+#np-note {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 7vw, 4.5rem);
+    line-height: 1;
+    color: var(--accent);
+    min-width: 2.2em;
+}
+
+#np-note.hit { animation: v-pulse 0.25s; }
+
+@keyframes v-pulse {
+    0% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+#np-string { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); }
+
+#violin {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.6));
+}
+
+.vstring { transition: stroke 0.1s; }
+.vstring.on { stroke: var(--accent); animation: v-vib 0.06s linear infinite; }
+
+@keyframes v-vib { 50% { transform: translateY(1.5px); } }
+
+.tape { fill: #efe6d4; opacity: 0.8; }
+
+.fdot { fill: var(--accent); stroke: #000; stroke-width: 3; }
+.fdot.open { fill: none; stroke: var(--accent); stroke-width: 4; }
+
+#bow { opacity: 0.55; transition: opacity 0.2s; }
+#bow.bowing { opacity: 1; animation: v-bowing 0.9s ease-in-out infinite alternate; }
+
+@keyframes v-bowing {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(50px); }
+}
+
+.how {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.how p { flex: 1 1 280px; max-width: 46ch; margin: 0; }
+.how strong { color: var(--text); }
+
+.keys { display: grid; gap: 6px; flex: 1 1 420px; }
+
+.key-row { display: flex; gap: 5px; align-items: center; }
+
+.key-row .lbl {
+    width: 70px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.kc {
+    min-width: 40px;
+    padding: 3px 4px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1.2;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-bottom-width: 3px;
+    border-radius: 6px;
+}
+
+.kc b { display: block; font-size: 0.9rem; color: var(--text); }
+.kc.down { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 30%, var(--surface)); transform: translateY(2px); }
+
+@media (max-width: 900px), (hover: none) {
+    .keys { display: none; }
+    .stage { padding: 14px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vstring.on, #bow.bowing, #np-note.hit { animation: none; }
+}

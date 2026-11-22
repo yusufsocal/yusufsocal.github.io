@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=JetBrains+Mono:wght@400&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="violin.css">
+    <script src="violin.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -158,7 +160,8 @@
             <ul class="skill-list hobbies-list">
                 <li><i class="fa-solid fa-book"></i> Reading</li>
                 <li><i class="fa-solid fa-gamepad"></i> Valorant</li>
-                <li><i class="fa-solid fa-music"></i> Violin</li>
+                <li><i class="fa-solid fa-music"></i> Violin
+                    <button class="open-stage v-play"><i class="fa-solid fa-play"></i> play it</button></li>
             </ul>
         </div>
     </section>
@@ -185,6 +188,63 @@
             </div>
         </div>
     </footer>
+
+    <!-- the violin stage (violin.js / violin.css) -->
+    <div id="stage" class="stage" role="dialog" aria-modal="true" aria-labelledby="stage-title" hidden>
+        <div class="stage-top">
+            <h2 id="stage-title">Play my violin</h2>
+            <div class="stage-btns">
+                <button id="demo-btn" class="v-btn"><i class="fa-solid fa-play"></i> <span>play Vivaldi</span></button>
+                <button id="fretless-btn" class="v-btn" aria-pressed="false" title="Fretless: slide freely between notes, like a real violin">snap to notes</button>
+                <button id="stage-close" class="stage-close" aria-label="Close the violin"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+
+        <div class="now-playing" aria-live="polite">
+            <span id="np-note">♪</span>
+            <span id="np-string">press and hold a string</span>
+        </div>
+
+        <svg id="violin" viewBox="0 0 1000 330" role="img" aria-label="A violin fingerboard with four strings">
+            <defs>
+                <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#f2a33a" />
+                    <stop offset=".55" stop-color="#b85a18" />
+                    <stop offset="1" stop-color="#6e2b0b" />
+                </linearGradient>
+            </defs>
+            <path d="M1000 6 L 860 6 C 790 6 740 30 720 80 C 712 105 712 225 720 250 C 740 300 790 324 860 324 L 1000 324 Z"
+                fill="url(#wood)" stroke="#000" stroke-width="5" />
+            <path d="M960 22 c -22 28 22 46 0 74" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round" />
+            <path d="M960 234 c -22 28 22 46 0 74" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round" />
+            <rect x="18" y="100" width="86" height="130" rx="18" fill="url(#wood)" stroke="#000" stroke-width="4" />
+            <circle cx="22" cy="165" r="30" fill="url(#wood)" stroke="#000" stroke-width="4" />
+            <path d="M22 165 m -14 0 a 14 14 0 1 0 14 -14 a 8 8 0 1 0 6 8" fill="none" stroke="#000" stroke-width="3" />
+            <g fill="#000">
+                <rect x="40" y="70" width="12" height="34" rx="4" />
+                <rect x="72" y="70" width="12" height="34" rx="4" />
+                <rect x="40" y="226" width="12" height="34" rx="4" />
+                <rect x="72" y="226" width="12" height="34" rx="4" />
+            </g>
+            <rect x="100" y="62" width="700" height="206" rx="6" fill="#141018" stroke="#000" stroke-width="4" />
+            <rect x="96" y="62" width="10" height="206" fill="#efe6d4" stroke="#000" stroke-width="2" />
+            <g id="tapes"></g>
+            <rect x="900" y="58" width="14" height="214" rx="4" fill="#f0d49a" stroke="#000" stroke-width="3" />
+            <g id="strings"></g>
+            <g id="dots"></g>
+            <g id="bow">
+                <rect x="836" y="-40" width="9" height="420" rx="4" fill="#3a1e0a" stroke="#000" stroke-width="2" />
+                <rect x="850" y="-30" width="5" height="400" fill="#fffaf0" stroke="#000" stroke-width="1" />
+                <rect x="828" y="300" width="30" height="40" rx="6" fill="#000" />
+            </g>
+        </svg>
+
+        <div class="how">
+            <p><strong>Mouse / touch:</strong> press a string and hold. Slide along it to change the note (closer to the
+                body = higher). Press past the fingerboard for the open string.</p>
+            <div class="keys" id="keys" aria-label="Keyboard controls"></div>
+        </div>
+    </div>
 </body>
 
 </html>
